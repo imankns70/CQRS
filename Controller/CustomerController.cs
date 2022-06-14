@@ -1,4 +1,5 @@
-﻿using CQRS.Queries;
+﻿using CQRS.Models;
+using CQRS.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace CQRS.Controller
         }
 
         [HttpGet(Name = "GetCustomerById")]
-        public async Task<ActionResult> GetCustomerById(int id)
+        public ActionResult GetCustomerById(int id)
         {
             return Content("");
         }

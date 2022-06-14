@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CQRS.Models;
+using MediatR;
 
 namespace CQRS.Queries
 {

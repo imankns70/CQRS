@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CQRS.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CQRS.Data
 {

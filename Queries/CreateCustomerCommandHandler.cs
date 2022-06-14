@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CQRS.Data;
+using CQRS.Models;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

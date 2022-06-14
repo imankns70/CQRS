@@ -1,3 +1,4 @@
+using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation.AspNetCore;
+using CQRS.Behaviors;
+using CQRS.MapProfile;
+using CQRS.Data.EventStore;
+using Microsoft.EntityFrameworkCore;
+using CQRS.Data;
 
 namespace CQRS
 {
@@ -26,11 +32,28 @@ namespace CQRS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("InMen"));
             services.AddMvc()
                 .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Startup>());
 
-            services.AddMediatR(typeof(Startup));
             
+
+             
+
+            //services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(DomainProfile).Assembly);
+
+            services.AddMediatR(typeof(Startup).Assembly);
+
+
+
+
+            services.AddSingleton<IEventStoreDbContext, EventStoreDbContext>();
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(EventLoggerBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehavior<,>));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,10 +77,10 @@ namespace CQRS
 
             app.UseAuthorization();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapRazorPages();
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

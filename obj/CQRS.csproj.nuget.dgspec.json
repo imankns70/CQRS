@@ -1,27 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\CQRS\\CQRS\\CQRS.csproj": {}
+    "D:\\Projects\\CQRS_Solution\\CQRS\\CQRS.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\CQRS\\CQRS\\CQRS.csproj": {
+    "D:\\Projects\\CQRS_Solution\\CQRS\\CQRS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\CQRS\\CQRS\\CQRS.csproj",
+        "projectUniqueName": "D:\\Projects\\CQRS_Solution\\CQRS\\CQRS.csproj",
         "projectName": "CQRS",
-        "projectPath": "D:\\Projects\\CQRS\\CQRS\\CQRS.csproj",
-        "packagesPath": "C:\\Users\\i.solouki\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\CQRS\\CQRS\\obj\\",
+        "projectPath": "D:\\Projects\\CQRS_Solution\\CQRS\\CQRS.csproj",
+        "packagesPath": "C:\\Users\\iman\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\CQRS_Solution\\CQRS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\i.solouki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "http://tfsapp:8080/tfs/TFSKSCCollection/_packaging/NugetPackageFeed/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -39,9 +39,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "AutoMapper": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[11.0.1, )"
+              "version": "[11.0.0, )"
+            },
+            "EventStore.Client": {
+              "target": "Package",
+              "version": "[21.2.2, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -59,6 +63,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -66,6 +74,12 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
             }
           },
           "imports": [

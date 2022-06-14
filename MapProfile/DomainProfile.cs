@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CQRS.Models;
 using CQRS.Queries;
 using System;
 
@@ -8,6 +9,9 @@ namespace CQRS.MapProfile
     {
         public DomainProfile()
         {
+
+            // Source --> Target
+
             CreateMap<CreateCustomerCommand, Customer>()
                 .ForMember(customer => customer.RegistrationDate, opt =>
                 opt.MapFrom(_ => DateTime.Now));
