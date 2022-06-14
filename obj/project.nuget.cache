@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "O+DQBTOPgjZupkmT4is0xDLXfSLIf0ehNWC7PKWVXygkNnUV6nrxlba06dHeqdnoY4F44OjgZA2G0CYK6kBwdQ==",
+  "dgSpecHash": "p0cz0qCra0/9cdTsbrnxruekYOhBxtkEEyaciiuBEHzvV9EanBwRD6PT2+UL4qCv9UQDFoBJJmZyNmguV82NMg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\CQRS\\CQRS\\CQRS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\i.solouki\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\i.solouki\\.nuget\\packages\\fluentvalidation\\11.0.2\\fluentvalidation.11.0.2.nupkg.sha512",
+    "C:\\Users\\i.solouki\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.0.2\\fluentvalidation.aspnetcore.11.0.2.nupkg.sha512",
+    "C:\\Users\\i.solouki\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.0.2\\fluentvalidation.dependencyinjectionextensions.11.0.2.nupkg.sha512",
     "C:\\Users\\i.solouki\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\i.solouki\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\i.solouki\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

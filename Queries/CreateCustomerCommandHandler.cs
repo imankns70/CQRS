@@ -10,9 +10,21 @@ namespace CQRS.Queries
     {
         readonly ApplicationDbContext _context;
         readonly IMapper _mapper;
-        public Task<CustomerDto> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        public CreateCustomerCommandHandler(ApplicationDbContext context, IMapper mapper)
         {
-            throw new System.NotImplementedException();
+            _context = context;
+            _mapper = mapper;
+        }
+
+        public async Task<CustomerDto> Handle(CreateCustomerCommand createCustomerCommand, CancellationToken cancellationToken)
+        {
+            Customer customer =_mapper.Map<Customer>(createCustomerCommand);
+
+            await _context.Customers.AddAsync(customer, cancellationToken);
+            await _context.SaveChangesAsync();
+
+            return _mapper.Map<CustomerDto>(customer);
+             
         }
     }
 }

@@ -1,6 +1,10 @@
-﻿namespace CQRS.Data
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace CQRS.Data
 {
-    public class ApplicationDbContext
+    public class ApplicationDbContext : DbContext
     {
+
+        public DbSet<Customer> Customers { get; set; }
     }
 }
