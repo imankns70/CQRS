@@ -11,9 +11,30 @@ namespace CQRS
 {
     public class Program
     {
+        private static event EventHandler evt;
+        private static void HandleEvent(object sender, EventArgs eveAargs)
+        {
+
+        }
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+
+
+            evt += (sender, eveArg) =>
+            {
+                System.Diagnostics.Debug.WriteLine("HelloWorld");
+            };
+            evt.Invoke(null, new EventArgs());
+            // CreateHostBuilder(args).Build().Run();
+        }
+
+
+        ~Program()
+        {
+            evt -= (sender, eveArg) =>
+            {
+                System.Diagnostics.Debug.WriteLine("HelloWorld");
+            };
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

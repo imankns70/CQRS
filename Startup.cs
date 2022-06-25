@@ -17,6 +17,7 @@ using CQRS.MapProfile;
 using CQRS.Data.EventStore;
 using Microsoft.EntityFrameworkCore;
 using CQRS.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace CQRS
 {
@@ -32,7 +33,8 @@ namespace CQRS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("InMen"));
+            
+            //services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("InMen"));
             services.AddMvc()
                 .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Startup>());
 
@@ -71,11 +73,12 @@ namespace CQRS
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            
 
             app.UseRouting();
 
-            app.UseAuthorization();
+
+
 
             app.UseEndpoints(endpoints =>
             {
